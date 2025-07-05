@@ -10,6 +10,11 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
+  Widget loading = LoadingAnimationWidget.inkDrop(
+    color: Colors.red,
+    size: 50,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +34,30 @@ class _LoadingPageState extends State<LoadingPage> {
               Row(
                 children: [
                   CupertinoButton(
+                    padding: EdgeInsets.zero,
                     onPressed: () {},
                     child: LoadingAnimationWidget.waveDots(
                       color: Colors.red,
-                      size: 30,
+                      size: 50,
+                    ),
+                  ),
+                  Spacer(),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    child: LoadingAnimationWidget.inkDrop(
+                      color: Colors.red,
+                      size: 50,
+                    ),
+                  ),
+                  Spacer(),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    child: LoadingAnimationWidget.twistingDots(
+                      size: 50,
+                      leftDotColor: Colors.green,
+                      rightDotColor: Colors.black,
                     ),
                   ),
                 ],
