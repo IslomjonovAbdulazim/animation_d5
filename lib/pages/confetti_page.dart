@@ -10,7 +10,9 @@ class ConfettiPage extends StatefulWidget {
 }
 
 class _ConfettiPageState extends State<ConfettiPage> {
-  final controller = ConfettiController(duration: Duration(seconds: 2),);
+  final controller = ConfettiController(
+    duration: Duration(seconds: 2),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +20,19 @@ class _ConfettiPageState extends State<ConfettiPage> {
       appBar: AppBar(),
       body: SafeArea(
         child: Stack(
+          alignment: Alignment.topCenter,
           children: [
             Center(
               child: CupertinoButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.play();
+                },
                 child: Text("Play Confetti"),
               ),
             ),
-            ConfettiWidget(confettiController: controller),
+            ConfettiWidget(
+              confettiController: controller,
+            ),
           ],
         ),
       ),
