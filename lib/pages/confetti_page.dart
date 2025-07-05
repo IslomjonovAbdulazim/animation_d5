@@ -25,7 +25,7 @@ class _ConfettiPageState extends State<ConfettiPage> {
                 child: Text("Play Confetti"),
               ),
             ),
-            ConfettiWidget(confettiController:),
+            ConfettiWidget(confettiController: controller),
           ],
         ),
       ),
