@@ -11,30 +11,30 @@ class ConfettiPage extends StatefulWidget {
 
 class _ConfettiPageState extends State<ConfettiPage> {
   final controller = ConfettiController(
-    duration: Duration(seconds: 2),
+    duration: Duration(seconds: 30),
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SafeArea(
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Center(
-              child: CupertinoButton(
-                onPressed: () {
-                  controller.play();
-                },
-                child: Text("Play Confetti"),
-              ),
+      body: Stack(
+        alignment: Alignment.centerRight,
+        children: [
+          Center(
+            child: CupertinoButton(
+              onPressed: () {
+                controller.stop(clearAllParticles: true);
+                controller.play();
+              },
+              child: Text("Play Confetti"),
             ),
-            ConfettiWidget(
-              confettiController: controller,
-            ),
-          ],
-        ),
+          ),
+          ConfettiWidget(
+            confettiController: controller,
+            numberOfParticles: 1000,
+          ),
+        ],
       ),
     );
   }
