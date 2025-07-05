@@ -32,7 +32,14 @@ class _ConfettiPageState extends State<ConfettiPage> {
           ),
           ConfettiWidget(
             confettiController: controller,
+
             numberOfParticles: 1000,
+            gravity: 0.1,
+            colors: [
+              Colors.green,
+              Colors.black,
+              Colors.yellow,
+            ],
           ),
         ],
       ),
