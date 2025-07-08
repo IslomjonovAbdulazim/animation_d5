@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -9,13 +9,23 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: LoadingAnimationWidget.fourRotatingDots(
-          color: Colors.green,
-          size: 60.0,
+        child: isLoading ?  : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Bu Content"),
+            SizedBox(height: 20),
+            CupertinoButton(
+              color: Colors.yellow,
+              onPressed: () {},
+              child: Text("Sign In"),
+            ),
+          ],
         ),
       ),
     );
